@@ -9,6 +9,6 @@
     "nodemon": "^2.0.15"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node deploy-commands.js && node index.js"
   }
 }
