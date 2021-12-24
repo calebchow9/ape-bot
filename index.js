@@ -2,7 +2,6 @@ require("dotenv").config();
 const fs = require('fs');
 const { Client, Collection, Intents } = require('discord.js');
 // Require the necessary discord.js classes
-const { token } = require('./config.json');
 const mongoose = require('mongoose');
 
 // Create a new client instance
@@ -34,7 +33,7 @@ for (const file of commandFiles) {
 }
 
 client.on('messageCreate', (message) => {
-	
+
 	// if bot talking
 	if (message.author.bot) return;
 
@@ -64,4 +63,4 @@ client.on('interactionCreate', async interaction => {
 });
 
 // Login to Discord with your client's token
-client.login(token);
+client.login(process.env.DISCORD_TOKEN);
