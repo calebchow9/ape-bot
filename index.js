@@ -36,12 +36,17 @@ for (const file of commandFiles) {
 }
 
 client.on('messageCreate', (message) => {
+	const blacklist = [
+		'689686762146103335',
+		'325523929290768384'
+	]
+
 	// if bot talking
 	if (message.author.bot) return;
 
 	console.log(message.author);
 
-	if (message.author.id =='689686762146103335') {
+	if (blacklist.indexOf(message.author.id) > -1) {
 		return message.reply('YOU ARE IRRELEVANT');
 	}
 
