@@ -4,7 +4,7 @@ const Game = require("../models/GameSchema");
 const data = new SlashCommandBuilder()
 	.setName('remove')
 	.setDescription('Removes a game from the pick list')
-    .addIntegerOption(option => 
+    .addStringOption(option => 
         option.setName('game')
             .setDescription('The name of the game to delete')
             .setRequired(true)
