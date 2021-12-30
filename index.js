@@ -42,7 +42,11 @@ client.on('messageCreate', (message) => {
 	console.log(msgLower);
 
 	if (msgLower.includes("should")) {
-		message.reply('YES');
+		if(msgLower.includes("stop")) {
+			return message.reply('NO');
+		} else {
+			return message.reply('YES');
+		}
 	}
 
 	console.log(`Message from ${message.author.username}: ${message.content}`);
